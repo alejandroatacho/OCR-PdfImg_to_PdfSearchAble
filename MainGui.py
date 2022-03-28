@@ -33,7 +33,8 @@ def select_file():
     )
 def convert_file():
     fpath = filename
-    fname = fpath.split("/")[2]#[:-4]
+    fname = os.path.basename(fpath)
+    # fname = fpath.split("/")[2]#[:-4]
     spath = "temp/save_path/{}".format(fname)
 
     print(fname)
