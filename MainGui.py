@@ -10,7 +10,6 @@ root = Tk()
 root.title=("SMART-obc PDF converter")
 root.iconbitmap('obc_icon.ico')
 root.geometry("500x300")
-
 #label
 my_label = Label(root, text = "Welcome to SMART-obc PDF converter!")
 my_label2 = Label(root, text = "Pick file location!")
