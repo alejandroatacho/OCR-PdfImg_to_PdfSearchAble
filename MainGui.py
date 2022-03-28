@@ -49,10 +49,10 @@ def my_click():
 mybutton = Button(root, text= "upload file", command = select_file)
 mybutton2 = Button(root, text="convert file", command = convert_file)
 #view of the UI
-my_label.pack()
-my_label2.pack()
-mybutton.pack()
-mybutton2.pack()
+my_label.grid(column=1, row=0, sticky='w', padx=10, pady=10)
+my_label2.grid(column=1, row=1, sticky='w', padx=10, pady=10)
+mybutton.grid(column=1, row=2, sticky='w', padx=10, pady=10)
+mybutton2.grid(column=2, row=2, sticky='w', padx=10, pady=10)
 
 root.mainloop()
 """fpath = r"temp/file_path/file.pdf"
