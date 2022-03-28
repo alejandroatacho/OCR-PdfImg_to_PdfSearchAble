@@ -1,5 +1,6 @@
 import ocrmypdf
 import os
+import tkinter
 
 """
 fpath = r"temp/file_path/file.pdf"
