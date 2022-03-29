@@ -1,4 +1,5 @@
 from ast import Global
+from matplotlib.pyplot import fill, text
 import ocrmypdf
 import os
 from tkinter import *
@@ -8,13 +9,27 @@ from tkinter.messagebox import showinfo
 
 #GUI overall meta info setup
 root = Tk()
-root.title=("SMART-obc PDF converter")
+root.title("SMART-obc PDF converter")
 root.iconbitmap('obc_icon.ico')
 root.geometry("500x300")
+#frame
+frame = Frame(root)
+frame.pack()
+frame1 = Frame(root)
+frame1.pack(side=TOP) # label
+frame2 = Frame(root)
+frame2.pack(side=TOP)
+frame3 = Frame(root)
+frame3.pack(fill="both", expand=True)
+frame3.rowconfigure(0, weight=1)
+frame3.columnconfigure(0, weight=1)
+
 #label
-my_label = Label(root, text = "Welcome to SMART-obc PDF converter!")
-my_label2 = Label(root, text = "Pick file location!")
-my_label3 =Label(root)
+my_label = Label(frame1, text = "Welcome to SMART-obc PDF converter!")
+my_label2 = Label(frame1, text = "Pick file location!")
+my_label3 =Label(frame2, text = "")
+
+
 #button
 def select_file():
     
@@ -48,13 +63,13 @@ def my_click():
     my_label = Label(root, text="welcome to the course")
     my_label.pack()
 
-mybutton = Button(root, text= "upload file", command = select_file)
-mybutton2 = Button(root, text="convert file", command = convert_file)
+mybutton = Button(frame3, text= "upload file", command = select_file)
+mybutton2 = Button(frame3, text="convert file", command = convert_file)
 #view of the UI
-my_label.grid(column=1, row=0, sticky='w', padx=10, pady=10)
-my_label2.grid(column=1, row=1, sticky='w', padx=10, pady=10)
-mybutton.grid(column=1, row=2, sticky='w', padx=10, pady=10)
-mybutton2.grid(column=2, row=2, sticky='w', padx=10, pady=10)
+my_label.pack()
+my_label2.pack()
+mybutton.pack()
+mybutton2.pack()
 
 root.mainloop()
 """fpath = r"temp/file_path/file.pdf"
