@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
+
 #GUI overall meta info setup
 root = Tk()
 root.title=("SMART-obc PDF converter")
@@ -13,6 +14,7 @@ root.geometry("500x300")
 #label
 my_label = Label(root, text = "Welcome to SMART-obc PDF converter!")
 my_label2 = Label(root, text = "Pick file location!")
+my_label3 =Label(root)
 #button
 def select_file():
     
@@ -34,7 +36,7 @@ def convert_file():
     fpath = filename
     fname = os.path.basename(fpath)
     # fname = fpath.split("/")[2]#[:-4]
-    spath = "temp/save_path/{}".format(fname)
+    spath = "temp/save_path/{}".format(fname) #hot folder location
 
     print(fname)
     def ocr(file_path, save_path):
