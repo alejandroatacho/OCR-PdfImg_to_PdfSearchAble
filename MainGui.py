@@ -9,7 +9,7 @@ from tkinter.messagebox import showinfo
 
 #GUI overall meta info setup
 root = Tk()
-root.title("SMART-obc PDF converter")
+root.title("SMART-obc PDF converter") 
 root.iconbitmap('obc_icon.ico')
 root.geometry("500x300")
 #frame
