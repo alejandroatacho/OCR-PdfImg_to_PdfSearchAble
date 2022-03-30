@@ -1,5 +1,6 @@
 from ast import Global
 import ocrmypdf
+from PIL import ImageTk, Image
 import os
 from tkinter import *
 from tkinter import ttk
