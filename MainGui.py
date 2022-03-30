@@ -8,13 +8,15 @@ from tkinter.messagebox import showinfo
 
 #GUI overall meta info setup
 root = Tk()
-root.title=("SMART-obc PDF converter")
+root.title("SMART-obc PDF converter")
 root.iconbitmap('obc_icon.ico')
 root.geometry("500x300")
 #label
 my_label = Label(root, text = "Welcome to SMART-obc PDF converter!")
 my_label2 = Label(root, text = "Pick file location!")
 my_label3 =Label(root)
+
+
 #button
 def select_file():
     
@@ -51,10 +53,12 @@ def my_click():
 mybutton = Button(root, text= "upload file", command = select_file)
 mybutton2 = Button(root, text="convert file", command = convert_file)
 #view of the UI
-my_label.grid(column=1, row=0, sticky='w', padx=10, pady=10)
-my_label2.grid(column=1, row=1, sticky='w', padx=10, pady=10)
-mybutton.grid(column=1, row=2, sticky='w', padx=10, pady=10)
-mybutton2.grid(column=2, row=2, sticky='w', padx=10, pady=10)
+my_label.grid(column=1, row=0, sticky='w', padx=150, pady=10)
+my_label.grid(columnspan=6)
+my_label2.grid(column=1, row=1, sticky='w', padx=175, pady=10)
+my_label2.grid(columnspan=6)
+mybutton.grid(column=2, row=2, sticky='w',padx=150,columnspan=3)
+mybutton2.grid(column=3, row=2, sticky='w', padx=250, pady=10)
 
 root.mainloop()
 """fpath = r"temp/file_path/file.pdf"
