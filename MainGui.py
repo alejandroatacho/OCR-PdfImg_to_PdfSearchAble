@@ -6,7 +6,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
-from functions.functions import *
+#from functions.functions import *
 
 #GUI overall meta info setup
 root = Tk()
@@ -31,7 +31,7 @@ drop.grid(row = 2 , column = 1, padx= 10, pady=10)
 def open():
     my_label = Label(root, text = clicked.get())
     my_label.grid(row = 2, column= 4, sticky='w', padx= 350, pady=10)
-    print("hi")
+
 
 def select_file():
     
