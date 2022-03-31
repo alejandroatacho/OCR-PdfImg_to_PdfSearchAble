@@ -16,7 +16,7 @@ root.title("SMART-obc PDF converter")
 
 root.iconbitmap('obc_icon.ico')
 root.geometry("500x300")
-#frame
+"""#frame
 frame = Frame(root)
 frame.pack()
 frame1 = Frame(root)
@@ -27,13 +27,14 @@ frame3 = Frame(root)
 frame3.pack(fill="both", expand=True)
 frame3.rowconfigure(0, weight=1)
 frame3.columnconfigure(0, weight=1)
-
+"""
 #label
 
 my_label = Label(root, text = "Welcome to SMART-obc PDF converter!")
 my_label2 = Label(root, text = "Pick file location!")
 my_label3 =Label(root)
 options = [
+    'Choose a PDF processor',
     'Grey scaling',
     'Thin fonts',
     'Thickening fonts'
@@ -77,11 +78,11 @@ def convert_file():
         ocrmypdf.ocr(file_path, save_path, skip_text=True)
 
     ocr(fpath, spath)
-
+"""
 def my_click():
     my_label = Label(root, text="welcome to the course")
     my_label.pack()
-
+"""
 
 mybutton = Button(root, text= "upload file", command = select_file)
 mybutton2 = Button(root, text="convert file", command = convert_file)
