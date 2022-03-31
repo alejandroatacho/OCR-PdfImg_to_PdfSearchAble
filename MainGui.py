@@ -1,15 +1,19 @@
 from ast import Global
 from matplotlib.pyplot import fill, text
 import ocrmypdf
+from PIL import ImageTk, Image
 import os
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
+#from functions.functions import *
 
 #GUI overall meta info setup
 root = Tk()
-root.title("SMART-obc PDF converter") 
+
+root.title("SMART-obc PDF converter")
+
 root.iconbitmap('obc_icon.ico')
 root.geometry("500x300")
 #frame
@@ -25,12 +29,27 @@ frame3.rowconfigure(0, weight=1)
 frame3.columnconfigure(0, weight=1)
 
 #label
-my_label = Label(frame1, text = "Welcome to SMART-obc PDF converter!")
-my_label2 = Label(frame1, text = "Pick file location!")
-my_label3 =Label(frame2, text = "")
 
+my_label = Label(root, text = "Welcome to SMART-obc PDF converter!")
+my_label2 = Label(root, text = "Pick file location!")
+my_label3 =Label(root)
+options = [
+    'Grey scaling',
+    'Thin fonts',
+    'Thickening fonts'
+] 
+clicked = StringVar()
+clicked.set(options[0])
+
+drop = OptionMenu(root, clicked, *options)
+drop.grid(row = 2 , column = 1, padx= 10, pady=10)
 
 #button
+def open():
+    my_label = Label(root, text = clicked.get())
+    my_label.grid(row = 2, column= 4, sticky='w', padx= 350, pady=10)
+
+
 def select_file():
     
     filetypes = (
@@ -63,13 +82,20 @@ def my_click():
     my_label = Label(root, text="welcome to the course")
     my_label.pack()
 
-mybutton = Button(frame3, text= "upload file", command = select_file)
-mybutton2 = Button(frame3, text="convert file", command = convert_file)
+
+mybutton = Button(root, text= "upload file", command = select_file)
+mybutton2 = Button(root, text="convert file", command = convert_file)
+mybutton3 = Button(root, text="Submit", command = open)
+
 #view of the UI
-my_label.pack()
-my_label2.pack()
-mybutton.pack()
-mybutton2.pack()
+my_label.grid(column=1, row=0, sticky='w', padx=150, pady=10)
+my_label.grid(columnspan=6)
+my_label2.grid(column=1, row=1, sticky='w', padx=175, pady=10)
+my_label2.grid(columnspan=6)
+mybutton.grid(column=2, row=2, sticky='w',padx=50,columnspan=3)
+mybutton2.grid(column=3, row=2, sticky='w', padx=150, pady=10)
+mybutton3.grid(row = 2, column= 4, sticky='w', padx= 350, pady=10)
+
 
 root.mainloop()
 """fpath = r"temp/file_path/file.pdf"
