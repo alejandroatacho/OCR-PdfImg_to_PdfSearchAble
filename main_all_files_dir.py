@@ -8,13 +8,13 @@ for filename in os.listdir(directory):
         fpath = os.path.join(directory, filename)
         fname = filename
         spath = "temp/save_path/{}".format(fname)
-        print(fname)
+        print("OCR Scanning the following file: " + fname)
         ocrmypdf.ocr(fpath, spath, skip_text=True)
-        print(filename)
+        #print(filename)
 
     else:
       print("This is not a pdf file, this file will be skipped")
 
 
     # ocrmypdf --skip-text template1.pdf template2.pdf
-    # https://youtu.be/1qBVT25mYmg?t=394
+
