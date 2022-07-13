@@ -1,7 +1,7 @@
 import ocrmypdf
 import os
 
-directory = r'temp/file_path'
+directory = r'temp/SMART-ocr module'
 
 for filename in os.listdir(directory):
     if filename.endswith(".pdf"):
