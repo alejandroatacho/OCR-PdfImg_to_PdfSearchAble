@@ -1,5 +1,6 @@
 temp/file_path/*
 temp/save_path/*
+temp/SMART-ocr module/*
 
 !temp/save_path/README.md
 !temp/file_path/README.md
